@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :set_article, only: [:edit, :update, :destroy, :show] # samo ove 4 etode pozivaju metodu set_article
+	before_action :set_article, only: [:edit, :update, :destroy, :show] # samo ove 4 metode pozivaju metodu set_article
 
 	# Metoda za ispis svih artikala
 	def index
@@ -45,12 +45,10 @@ class ArticlesController < ApplicationController
 	end
 
 	# Metoda za brisanje podataka
-	def destroy		
-		
+	def destroy				
 		@article.destroy
 		flash[:danger] = "Article succefully deleted"
 		redirect_to articles_path
-
 	end
 
 private
